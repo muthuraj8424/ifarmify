@@ -36,12 +36,12 @@ const BuyerDashboard = () => {
     if (!userId) return;
 
     axios
-      .get("http://localhost:5000/buyer/getallproducts")
+      .get("https://ifarmify.onrender.com/buyer/getallproducts")
       .then((response) => setProducts(response.data.products))
       .catch((error) => console.error("Error fetching products:", error));
 
     axios
-      .get(`http://localhost:5000/buyer/getorder/${userId}`, {
+      .get(`https://ifarmify.onrender.com/buyer/getorder/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setOrders(response.data.orders || []))
@@ -52,7 +52,7 @@ const BuyerDashboard = () => {
     picture
       ? picture.startsWith("http")
         ? picture
-        : `http://localhost:5000/uploads/${picture}`
+        : `https://ifarmify.onrender.com/uploads/${picture}`
       : "default-image-path.jpg";
 
   const selectProduct = (product) => {
@@ -95,7 +95,7 @@ const BuyerDashboard = () => {
 
     axios
       .post(
-        "http://localhost:5000/buyer/placeorder",
+        "https://ifarmify.onrender.com/buyer/placeorder",
         { orderItems: orderData, address },
         { headers: { Authorization: `Bearer ${token}` } }
       )
