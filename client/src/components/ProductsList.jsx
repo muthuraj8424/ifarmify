@@ -9,7 +9,7 @@ const ProductsList = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/admin/products');
+                const response = await axios.get('https://ifarmify.onrender.com/admin/products');
                 setProducts(response.data.products);
             } catch (err) {
                 setError('Failed to fetch products');
