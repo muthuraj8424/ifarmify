@@ -18,7 +18,7 @@ function Orders() {
   }
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/buyer/getorder/${userId}`, {
+      .get(`https://ifarmify.onrender.com/buyer/getorder/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setOrders(response.data.orders || []))
