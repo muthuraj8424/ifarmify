@@ -12,7 +12,18 @@ const app = express();
 app.use(cors());
 
 // Enable CORS for only your frontend domain (http://localhost:3000)
-app.use(cors({ origin: 'http://localhost:3000' }));
+const corsOptions = {
+  origin: ['https://ifarmify-app-ds6y.onrender.com'], 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  credentials: true, 
+  preflightContinue: false, 
+  allowedHeaders: ['Content-Type', 'Authorization'] 
+};
+
+
+app.use(cors(corsOptions));
+
+app.options('*', cors(corsOptions)); 
 
 app.use(express.json());
 
