@@ -9,7 +9,7 @@ const OrdersList = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/admin/getorders',{
+                const response = await axios.get('https://ifarmify.onrender.com/admin/getorders',{
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                         "Content-Type": "multipart/form-data",
@@ -26,7 +26,7 @@ const OrdersList = () => {
 
     const updateOrderStatus = async (orderId, newStatus) => {
         try {
-            await axios.put(`http://localhost:5000/admin/editorders/${orderId}`, { status: newStatus },{
+            await axios.put(`https://ifarmify.onrender.com/admin/editorders/${orderId}`, { status: newStatus },{
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                     "Content-Type": "multipart/form-data",
