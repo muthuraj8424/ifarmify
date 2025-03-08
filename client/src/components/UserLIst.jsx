@@ -9,7 +9,7 @@ const UsersList = () => {
         const fetchUsers = async () => {
             setLoading(true);
             try {
-                const response = await axios.get('http://localhost:5000/admin/getallusers',{
+                const response = await axios.get('https://ifarmify.onrender.com/admin/getallusers',{
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                         "Content-Type": "multipart/form-data",
