@@ -25,7 +25,7 @@ const AdminDashboard = () => {
       
       try {
         const usersResponse = await axios.get(
-          "http://localhost:5000/admin/getallusers",
+          "https://ifarmify.onrender.com/admin/getallusers",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
         setUsers(usersResponse.data.users);
 
         const productsResponse = await axios.get(
-          "http://localhost:5000/admin/products",
+          "https://ifarmify.onrender.com/admin/products",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -45,7 +45,7 @@ const AdminDashboard = () => {
         setProducts(productsResponse.data.products);
 
         const ordersResponse = await axios.get(
-          "http://localhost:5000/admin/getorders",
+          "https://ifarmify.onrender.com/admin/getorders",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -66,7 +66,7 @@ const AdminDashboard = () => {
   const handleEditOrderStatus = async (orderId, status) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/admin/editorders/${orderId}`,
+        `https://ifarmify.onrender.com/admin/editorders/${orderId}`,
         { status },
         {
           headers: {
@@ -94,7 +94,7 @@ const AdminDashboard = () => {
     if (name && quantity) {
       try {
         await axios.put(
-          `http://localhost:5000/admin/editproducts/${productId}`,
+          `https://ifarmify.onrender.com/admin/editproducts/${productId}`,
           { name, quantity },
           {
             headers: {
@@ -105,7 +105,7 @@ const AdminDashboard = () => {
         alert("Product updated successfully");
         // Re-fetch products to get the updated list
         const productsResponse = await axios.get(
-          "http://localhost:5000/admin/products",
+          "https://ifarmify.onrender.com/admin/products",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -126,7 +126,7 @@ const AdminDashboard = () => {
     if (confirmDelete) {
       try {
         await axios.delete(
-          `http://localhost:5000/admin/deleteproducts/${productId}`,
+          `https://ifarmify.onrender.com/admin/deleteproducts/${productId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -136,7 +136,7 @@ const AdminDashboard = () => {
         alert("Product deleted successfully");
         // Re-fetch products after deletion
         const productsResponse = await axios.get(
-          "http://localhost:5000/admin/products",
+          "https://ifarmify.onrender.com/admin/products",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -168,7 +168,7 @@ const AdminDashboard = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/admin/products/add",
+        "https://ifarmify.onrender.com/admin/products/add",
         formData,{
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
