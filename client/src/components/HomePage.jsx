@@ -97,7 +97,7 @@ const HomePage = () => {
 
     const handleLogout = async () => {
         try {
-            await axios.post('http://localhost:5000/auth/logout'); // Server-side logout (optional)
+            await axios.post('https://ifarmify.onrender.com/auth/logout'); // Server-side logout (optional)
         } catch (error) {
             console.error('Logout failed:', error);
         }
