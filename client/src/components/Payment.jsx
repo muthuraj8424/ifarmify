@@ -31,7 +31,7 @@ const Payment = () => {
             transactionId
         };
 
-        axios.post(`http://localhost:5000/payment/pay/${userId}/${orderId}`, paymentDetails, {
+        axios.post(`https://ifarmify.onrender.com/payment/pay/${userId}/${orderId}`, paymentDetails, {
             headers: {
                 Authorization: `Bearer ${token}` // Include token in Authorization header for payment
             }
